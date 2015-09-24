@@ -1,0 +1,60 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family:monospace;
+  align:center;
+  text-align:center;
+  background-color:rgba(220,220,220,1);
+  height:100%;
+}
+
+
+a {
+  color: #00B7FF;
+}
+
+section{
+  -webkit-box-shadow: inset 0px 0px 55px -13px rgba(0,0,0,0.75);
+  -moz-box-shadow: inset 0px 0px 55px -13px rgba(0,0,0,0.75);
+  box-shadow: inset 0px 0px 30px -13px rgba(0,0,0,0.75);
+  padding:50px;
+}
+
+
+input{
+  -webkit-box-shadow: inset 0px 0px 10px 0px rgba(42,42,42,0.75);
+  -moz-box-shadow: inset 0px 0px 10px 0px rgba(42,42,42,0.75);
+  box-shadow: inset 0px 0px 10px 0px rgba(42,42,42,0.75);
+  border-width:0px;
+  border-radius: 2px 2px 2px 2px;
+  -moz-border-radius: 2px 2px 2px 2px;
+  -webkit-border-radius: 2px 2px 2px 2px;
+  margin:10px;
+  width:90%;
+  text-align:center;
+  font-size:50px;
+  font-family:monospace;
+}
+input:focus{
+  outline:none;
+}
+button{
+  font-family:monospace;
+  background-color: rgba(255,255,255,1);
+  padding:10px;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(42,42,42,0.75);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(42,42,42,0.75);
+  box-shadow: 0px 0px 10px 0px rgba(42,42,42,0.75);
+  border-width:0px;
+  margin:10px;
+  width:15%;
+  font-size:20px;
+}
+button:active{
+  -webkit-box-shadow: 0px 0px 6px 0px rgba(42,42,42,0.75);
+  -moz-box-shadow: 0px 0px 6px 0px rgba(42,42,42,0.75);
+  box-shadow: 0px 0px 6px 0px rgba(42,42,42,0.75);
+}
+button:focus{
+  outline:none;
+}
