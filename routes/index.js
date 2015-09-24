@@ -34,11 +34,9 @@ router.post('/addurl', function(req, res, next){
   store.find({l:req.body.lURL},{}, function(err, result){
     if (result.length === 0)
     {
-      var lURL = req.body.lURL;
-      var pos = lURL.indexOf('https://')
-      lURL = lURL.slice(pos+1,lURL.length);
-      pos = lURL.indexOf('http://')
-      lURL = lURL.slice(pos+1, lURL.length);
+      var lURL = cleanURL(req.body.lURL);
+      console.log(lURL);
+
 
       var sURL = 0;
       store.count({},function(err, count){
@@ -53,24 +51,19 @@ router.post('/addurl', function(req, res, next){
   })
 });
 
-
 function cleanURL(dirtyUrl){
-  console.log(dirtyUrl);
   var testString = 'https://';
   var pos = dirtyUrl.indexOf(testString)
   if (pos != -1)
     dirtyUrl = dirtyUrl.slice(pos+testString.length,dirtyUrl.length);
-      console.log(dirtyUrl);
   testString = 'http://';
   pos =  dirtyUrl.indexOf(testString)
   if (pos != -1)
     dirtyUrl = dirtyUrl.slice(pos+testString.length,dirtyUrl.length);
-      console.log(dirtyUrl);
   testString = 'www.';
   pos =  dirtyUrl.indexOf(testString)
   if (pos != -1)
     dirtyUrl = dirtyUrl.slice(pos+testString.length,dirtyUrl.length);
-      console.log(dirtyUrl);
   return dirtyUrl;
 }
 
