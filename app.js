@@ -7,8 +7,10 @@ var bodyParser = require('body-parser');
 var mongo = require('mongodb');
 var monk = require('monk');
 var db = monk('mongodb://localhost:27017/shortURL');
+var session = require('express-session');
 
 var routes = require('./routes/index');
+var chatRoutes = require('./routes/chat.js');
 
 var app = express();
 
@@ -30,7 +32,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(session({secret:'mySecret', cookie:{maxAge: 60000}}));
+
 app.use('/', routes);
+app.use('/chat', chatRoutes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

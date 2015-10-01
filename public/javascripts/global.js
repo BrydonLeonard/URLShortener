@@ -12,6 +12,8 @@ $(document).ready(function(){
 					$('#output').html('<p>'+response+'</p>');
 					var newButton = $('<button id="btnPrevious">View previous</button>')
 					$('#output').append(newButton);
+
+
 					newButton.on('click', function(){
 						console.log('doing stuff');
 						$.ajax({type:"GET",
