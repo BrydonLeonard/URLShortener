@@ -13,12 +13,7 @@ router.get('/~:sh', function(req, res, next) {
 
   var url = req.params.sh;
 
-  console.log(url);
-
-  var pos = url.indexOf('https://')
-  url = url.slice(pos+1,url.length);
-  pos =  url.indexOf('http://')
-  url = url.slice(pos+1, url.length);
+  url = clearnURL(url);
 
   store.find({s:req.params.sh},{},function(err, result){
     if (result[0])
@@ -49,6 +44,16 @@ router.post('/addurl', function(req, res, next){
       res.send(cleanURL(req.get('host')) + '/~' + result[0].s);
     }
   })
+});
+
+router.get('/getall', function(req, res, next){
+  var data = "";
+  var db = req.db;
+  var store = db.get('store');
+
+  store.find({},{},function(err, results){
+    res.send(results);
+  });
 });
 
 function cleanURL(dirtyUrl){
