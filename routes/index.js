@@ -13,7 +13,7 @@ router.get('/~:sh', function(req, res, next) {
 
   var url = req.params.sh;
 
-  url = clearnURL(url);
+  url = cleanURL(url);
 
   store.find({s:req.params.sh},{},function(err, result){
     if (result[0])
