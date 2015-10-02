@@ -1,0 +1,14 @@
+extends layout
+
+block moreScripts
+	script(src="/javascripts/threadlist.js")
+
+block content
+	h1#threadListTitle
+	div#threadListBlock
+		each thread, i in threadList
+			div
+				a(id=thread._id, href=thread.urlExt)=thread.title
+				span  |  
+				a(class="anchorDelete", link=thread._id, href="#") delete
+	button#buttonNewThread Add Thread

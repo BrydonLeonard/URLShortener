@@ -11,6 +11,7 @@ var session = require('express-session');
 
 var routes = require('./routes/index');
 var chatRoutes = require('./routes/chat.js');
+var forums = require('./routes/forums.js');
 
 var app = express();
 
@@ -36,6 +37,7 @@ app.use(session({secret:'mySecret', cookie:{maxAge: 60000}}));
 
 app.use('/', routes);
 app.use('/chat', chatRoutes);
+app.use('/forums', forums);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
