@@ -1,0 +1,13 @@
+extends layout
+block moreScripts
+	script(src="/javascripts/thread.js")
+	
+block content
+	h1=thread.title
+	div#threadComments
+		each comment, i in comments
+			p(class="comment-box")=comment.text
+	div
+		input#inputComment(class="inputComment", placeholder='enter comment')
+	div
+		button#submitComment Submit

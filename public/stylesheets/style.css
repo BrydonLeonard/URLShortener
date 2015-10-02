@@ -72,6 +72,10 @@ input{
 input:focus{
   outline:none;
 }
+input.inputComment{
+  font-size:25px;
+  width:60%;
+}
 button{
   font-family:monospace;
   background-color: rgba(255,255,255,1);
@@ -91,4 +95,12 @@ button:active{
 }
 button:focus{
   outline:none;
+}
+p.comment-box{
+  -webkit-box-shadow: inset 0px 0px 6px 0px rgba(42,42,42,0.75);
+  -moz-box-shadow: inset 0px 0px 6px 0px rgba(42,42,42,0.75);
+  box-shadow: inset 0px 0px 6px 0px rgba(42,42,42,0.75);
+  width:inherit;
+  padding-top:5px;
+  padding-bottom:5px;
 }
