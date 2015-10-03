@@ -13,15 +13,18 @@ $(document).ready(function(){
 	$('a.anchorDelete').on('click', function(event){
 		console.log($(this).context.getAttribute('link'));
 		event.preventDefault();
-		$.ajax({
-			type:"POST",
-			data:{id:$(this).context.getAttribute('link')},
-			url:'delete'
-		}).done(function(response){
-			if (response==="success")
-			{
-				location.reload();
-			}else alert("Something went wrong");
-		});
+		var adminCred = prompt("Admin credentials?");
+		if (adminCred.length > 0){
+			$.ajax({
+				type:"POST",
+				data:{id:$(this).context.getAttribute('link')},
+				url:'delete'
+			}).done(function(response){
+				if (response==="success")
+				{
+					location.reload();
+				}else alert("Something went wrong");
+			});
+		}
 	});
 });

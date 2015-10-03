@@ -1,13 +1,12 @@
 extends layout
 
 block moreScripts
-  scipt(src="/javascripts/global.js")
+  script(src="/javascripts/global.js")
 
 block content
   h1= "enter your url"
   input#inputURL(type="text", placeholder="url")
   br
   button#btnSubmit shorten
-  
+
   div#output
-    
